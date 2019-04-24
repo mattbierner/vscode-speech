@@ -1,10 +1,10 @@
 import * as vscode from 'vscode';
 import * as say from 'say';
 
-const getVoice = (): string =>
+const getVoice = (): string| undefined =>
     vscode.workspace.getConfiguration('speech').get<string>('voice');
 
-const getSpeed = (): number =>
+const getSpeed = (): number | undefined =>
     vscode.workspace.getConfiguration('speech').get<number>('speed');
 
 
