@@ -2,9 +2,10 @@
   "name": "speech",
   "displayName": "VSCode Speech",
   "description": "Text to speech",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "publisher": "bierner",
   "license": "MIT",
+  "extensionKind": "ui",
   "keywords": [
     "speech",
     "say",
