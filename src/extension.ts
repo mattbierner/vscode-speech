@@ -12,8 +12,14 @@ const stopSpeaking = () => {
     say.stop();
 }
 
-const speakText = (text: string) => {
+const cleanText = (text: string): string => {
     text = text.trim();
+    text = text.replace(/'/g, '"');
+    return text;
+}
+
+const speakText = (text: string) => {
+    text = cleanText(text);
     if (text.length > 0) {
         say.speak(text, getVoice(), getSpeed());
     }
