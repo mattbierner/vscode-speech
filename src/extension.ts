@@ -1,11 +1,14 @@
 import * as vscode from 'vscode';
 import * as say from 'say';
 
-const getVoice = (): string| undefined =>
+const getVoice = (): string | undefined =>
     vscode.workspace.getConfiguration('speech').get<string>('voice');
 
 const getSpeed = (): number | undefined =>
     vscode.workspace.getConfiguration('speech').get<number>('speed');
+
+const getSubstitutions = (): { [key: string]: string } => 
+    vscode.workspace.getConfiguration('speech').get<{ [key: string]: string }>('substitutions') || {};
 
 
 const stopSpeaking = () => {
@@ -14,7 +17,9 @@ const stopSpeaking = () => {
 
 const cleanText = (text: string): string => {
     text = text.trim();
-    text = text.replace(/'/g, '"');
+    for (let [pattern, replacement] of Object.entries(getSubstitutions())) {
+        text = text.replaceAll(pattern, replacement);
+    }
     return text;
 }
 
