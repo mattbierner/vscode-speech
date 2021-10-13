@@ -2,10 +2,10 @@
   "name": "speech",
   "displayName": "VSCode Speech",
   "description": "Text to speech",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "publisher": "bierner",
   "license": "MIT",
-  "extensionKind": "ui",
+  "extensionKind": ["ui"],
   "keywords": [
     "speech",
     "say",
@@ -37,10 +37,7 @@
       "title": "Speech configuration",
       "properties": {
         "speech.voice": {
-          "type": [
-            "string",
-            "null"
-          ],
+          "type": "string",
           "default": null,
           "description": "Name of voice used to speak text."
         },
@@ -48,6 +45,17 @@
           "type": "number",
           "default": 1,
           "description": "Speech rate speed multiplier."
+        },
+        "speech.substitutions": {
+          "type": "object",
+          "patternProperties": {
+            "": { "type": "string" }
+          },
+          "additionalProperties": false,
+          "default": {
+            "_": " "
+          },
+          "description": "A dictionary of characters to replace with other characters before speaking. This can help with characters that text-to-speech reads in an unexpected way."
         }
       }
     },
@@ -92,8 +100,8 @@
     "watch": "tsc -watch -p ./"
   },
   "devDependencies": {
-    "typescript": "^3.4.0",
-    "@types/vscode": "^1.33.0"
+    "typescript": "^4.0.0",
+    "@types/vscode": "^1.5.0"
   },
   "dependencies": {
     "say": "^0.15.0"
