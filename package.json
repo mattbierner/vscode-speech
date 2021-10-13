@@ -2,7 +2,7 @@
   "name": "speech",
   "displayName": "VSCode Speech",
   "description": "Text to speech",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "publisher": "bierner",
   "license": "MIT",
   "extensionKind": [
@@ -20,7 +20,7 @@
     "theme": "light"
   },
   "engines": {
-    "vscode": "^1.5.0"
+    "vscode": "^1.50.0"
   },
   "categories": [
     "Other"
@@ -101,8 +101,8 @@
     "watch": "tsc -watch -p ./"
   },
   "devDependencies": {
-    "typescript": "^4.0.0",
-    "@types/vscode": "^1.5.0"
+    "@types/vscode": "^1.50.0",
+    "typescript": "^4.0.0"
   },
   "dependencies": {
     "say": "^0.15.0"
