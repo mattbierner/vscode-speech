@@ -5,7 +5,9 @@
   "version": "0.0.4",
   "publisher": "bierner",
   "license": "MIT",
-  "extensionKind": ["ui"],
+  "extensionKind": [
+    "ui"
+  ],
   "keywords": [
     "speech",
     "say",
@@ -48,10 +50,9 @@
         },
         "speech.substitutions": {
           "type": "object",
-          "patternProperties": {
-            "": { "type": "string" }
+          "additionalProperties": {
+            "type": "string"
           },
-          "additionalProperties": false,
           "default": {
             "_": " "
           },
