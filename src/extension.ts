@@ -1,5 +1,5 @@
-import * as vscode from 'vscode';
 import * as say from 'say';
+import * as vscode from 'vscode';
 
 const getVoice = (): string | undefined =>
     vscode.workspace.getConfiguration('speech').get<string>('voice');
@@ -7,7 +7,7 @@ const getVoice = (): string | undefined =>
 const getSpeed = (): number | undefined =>
     vscode.workspace.getConfiguration('speech').get<number>('speed');
 
-const getSubstitutions = (): { [key: string]: string } => 
+const getSubstitutions = (): { [key: string]: string } =>
     vscode.workspace.getConfiguration('speech').get<{ [key: string]: string }>('substitutions') || {};
 
 
